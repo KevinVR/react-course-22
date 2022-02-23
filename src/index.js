@@ -9,16 +9,22 @@ import {
 import ClickCounterPage from "./click/ClickCounterPage";
 import AgifyPage from "./agify/AgifyPage";
 import Homepage from "./Homepage";
+import {RecoilRoot} from "recoil";
+import ClickCounterStatePage from "./click/ClickCounterStatePage";
 
 ReactDOM.render(
     <React.StrictMode>
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<Homepage />} />
-                <Route path="/click" element={<ClickCounterPage />} />
-                <Route path="/agify" element={<AgifyPage />} />
-            </Routes>
-        </BrowserRouter>
+        <RecoilRoot>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Homepage/>}/>
+                    <Route path="/click" element={<ClickCounterPage/>}/>
+                    <Route path="/agify" element={<AgifyPage/>}/>
+                    <Route path="/recoil-1" element={<ClickCounterStatePage/>}/>
+                    <Route path="/recoil-2" element={<ClickCounterStatePage/>}/>
+                </Routes>
+            </BrowserRouter>
+        </RecoilRoot>
     </React.StrictMode>,
     document.getElementById('root')
 );
